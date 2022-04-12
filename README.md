@@ -2,6 +2,15 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.0.4.
 
+## Componentes del grupo:
+
+- Yago Pérez Molanes (alu0101254678)
+- Saúl Pérez García (alu0101129785)
+- Andrea Calero Caro (alu0101202952)
+
+## Informe en GitHub Pages:
+
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
