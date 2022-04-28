@@ -1,1 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+
+
+html {
+  font-family: 'Roboto';
+}
+
+body {
+  /* #6DCFE5 #85C1E9  */
+  background-color: #5e778d ; 
+  font-family: inherit ;
+}
