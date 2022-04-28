@@ -1,17 +1,29 @@
 .home-header {
-  background: url("../../../assets/images/home-header-1.jpg") center bottom;
+  background: url("../../../assets/images/home-header-2.jpg") center bottom;
   background-size: cover;
   background-color: black;
   
   color: #FFFFFF;
   /* text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.90); */
   text-shadow: 3px 3px 5px rgba(0, 0, 0, 1);
+  border-radius: 6px;
 }
 
 .home-block {
   text-align: center;
+  border-radius: 6px;
 }
 
 .home-block-thumbnail {
   background-color: #f8f8f8;
+  border-radius: 6px;
+}
+
+.footer-expand {
+  background-color: black;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 40px;
+  color: white;
 }

@@ -5,6 +5,7 @@ import {ProductosComponent} from './components/productos/productos.component'
 import {MisproductosComponent} from './components/misproductos/misproductos.component'
 import { SignupComponent } from './components/signup/signup.component';
 import { SigninComponent } from './components/signin/signin.component';
+import { CatalogoComponent } from './components/catalogo/catalogo.component';
 import { AutorizacionGuard } from './autorizacion.guard';
 
 //cada vez que visite una ruta estos componentes van a ser renderizados
@@ -32,6 +33,10 @@ const routes: Routes = [
   {
     path: 'signin',
     component: SigninComponent
+  },
+  {
+    path: 'catalogo',
+    component: CatalogoComponent
   }
 ];
 
