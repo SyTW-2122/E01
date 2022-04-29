@@ -1,4 +1,4 @@
-const { Router } = require('express');
+import {Router} from 'express';
 const router = Router();
 
 const User = require('../models/user');
@@ -84,7 +84,7 @@ router.get('/misproductos', verifyToken, (req, res) => {
   ])
 });
 
-module.exports = router;
+export default router;
 
 function verifyToken(req, res, next) {
   console.log("->");

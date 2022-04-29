@@ -1,14 +1,23 @@
-const express = require('express');
-const app = express();
-const cors = require('cors');
+//para ejecutar typescript con node se usa ts-node
+import app from './app';
+import startConnection from './database';
 
-require('./database');
+async function main() {
+  startConnection();
+  //es un codigo asincrono y no quiero usar un callback
+  await app.listen(app.get('port'));
+  console.log('Servidor escuchando en el puerto', app.get('port'));
+} 
 
-app.use(cors()); //agrega cabeceras a la peticion para poder
+main();
+
+
+
+
+//const cors = require('cors');
+
+
+//app.use(cors()); //agrega cabeceras a la peticion para poder
 //ser pasado del servidor de angular al servidor express
-app.use(express.json());
 
-app.use('/api', require('./routes/index'));
-
-app.listen(3000);
-console.log("Server on port", 3000);
+//app.use('/api', require('./routes/index'));
