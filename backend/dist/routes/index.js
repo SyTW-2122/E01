@@ -77,9 +77,12 @@ router.get('/productos', (req, res) => {
     }
   ])
 });*/
-router.route('/anadirProducto')
+//aqui hay que poner verifytoken
+//editar producto hace la funcion del catalogo, y añadir un producto
+router.route('/editarProducto')
     .get(product_controller_1.getProducts)
     .post(multer_1.default.single('image'), product_controller_1.createProduct);
+router.route('editarProducto/:id');
 exports.default = router;
 function verifyToken(req, res, next) {
     console.log("->");
