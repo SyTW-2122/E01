@@ -6,6 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = require("express");
 const user_1 = __importDefault(require("../models/user"));
 const product_controller_1 = require("../controllers/product.controller");
+const multer_1 = __importDefault(require("../libs/multer"));
 const router = (0, express_1.Router)();
 const jwt = require('jsonwebtoken');
 router.get('/', (req, res) => res.send('Hello world'));
@@ -76,10 +77,9 @@ router.get('/productos', (req, res) => {
     }
   ])
 });*/
-//router.route()
 router.route('/anadirProducto')
     .get(product_controller_1.getProducts)
-    .post(product_controller_1.createProduct);
+    .post(multer_1.default.single('image'), product_controller_1.createProduct);
 exports.default = router;
 function verifyToken(req, res, next) {
     console.log("->");

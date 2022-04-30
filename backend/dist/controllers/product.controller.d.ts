@@ -1,3 +1,4 @@
 import { Request, Response } from "express";
-export declare function getProducts(): void;
-export declare function createProduct(req: Request, res: Response): Response<any, Record<string, any>>;
+export declare function getProducts(req: Request, res: Response): Promise<Response>;
+export declare function createProduct(req: Request, res: Response): Promise<Response>;
+export declare function getProduct(req: Request, res: Response): Promise<Response>;

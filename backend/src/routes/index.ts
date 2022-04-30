@@ -1,6 +1,7 @@
 import {Router, Request, Response, NextFunction} from 'express';
 import User from '../models/user';
 import { getProducts, createProduct } from '../controllers/product.controller';
+import multer from '../libs/multer';
 
 const router = Router();
 const jwt = require('jsonwebtoken');
@@ -84,11 +85,9 @@ router.get('/productos', (req, res) => {
   ])
 });*/
 
-//router.route()
-
 router.route('/anadirProducto')
   .get(getProducts)
-  .post(createProduct);
+  .post(multer.single('image'), createProduct);
 
 export default router;
 
@@ -109,5 +108,4 @@ function verifyToken(req, res: Response, next: NextFunction) {
   console.log(payload);
   req.userId = payload._id;
   next();
-
 }
