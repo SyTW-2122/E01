@@ -1,16 +1,16 @@
-import {Router} from 'express';
+import {Router, Request, Response, NextFunction} from 'express';
+import User from '../models/user';
+import { getProducts, createProduct } from '../controllers/product.controller';
+
 const router = Router();
-
-const User = require('../models/user');
-
 const jwt = require('jsonwebtoken');
 
-router.get('/', (req, res) => res.send('Hello world'));
+router.get('/', (req: Request, res: Response) => res.send('Hello world'));
 
-router.post('/signup', async (req, res) => {
+router.post('/signup', async (req: Request, res: Response) => {
   //console.log(req.body);
   const { name, email, password, type } = req.body;
-  const newUser = User({name, email, password, type}); 
+  const newUser = new User({ name, email, password, type }); 
   await newUser.save();
 
   const token = await jwt.sign({_id: newUser._id}, 'secretkey');
@@ -21,7 +21,7 @@ router.post('/signup', async (req, res) => {
   //res.send('register');
 });
 
-router.post('/signin', async (req, res) => {
+router.post('/signin', async (req: Request, res: Response) => {
   const {email, password} = req.body;
   const user = await User.findOne({email});
 
@@ -61,7 +61,7 @@ router.get('/productos', (req, res) => {
   ])
 });
 
-router.get('/misproductos', verifyToken, (req, res) => {
+/*router.get('/misproductos', verifyToken, (req, res) => {
   res.json([
     {
       _id: 1,
@@ -82,11 +82,17 @@ router.get('/misproductos', verifyToken, (req, res) => {
       supermercado: "Mercadona"
     }
   ])
-});
+});*/
+
+//router.route()
+
+router.route('/anadirProducto')
+  .get(getProducts)
+  .post(createProduct);
 
 export default router;
 
-function verifyToken(req, res, next) {
+function verifyToken(req, res: Response, next: NextFunction) {
   console.log("->");
   console.log(req.headers);
 
