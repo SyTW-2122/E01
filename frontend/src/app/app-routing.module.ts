@@ -36,7 +36,8 @@ const routes: Routes = [
   },
   {
     path: 'catalogo',
-    component: CatalogoComponent
+    component: CatalogoComponent,
+    canActivate: [AutorizacionGuard]
   }
 ];
 
