@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 
-import { MisproductosComponent } from './misproductos.component';
+import { AnadirProductosComponent } from './anadir-productos.component';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 
-describe('MisproductosComponent', () => {
-  let component: MisproductosComponent;
-  let fixture: ComponentFixture<MisproductosComponent>;
+describe('AnadirProductosComponent', () => {
+  let component: AnadirProductosComponent;
+  let fixture: ComponentFixture<AnadirProductosComponent>;
   let httpClient: HttpClient;
   let httpTestingController: HttpTestingController;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [HttpClientTestingModule],
-      declarations: [ MisproductosComponent ]
-    })  
+      declarations: [ AnadirProductosComponent ]
+    })
     .compileComponents();
     httpClient = TestBed.inject(HttpClient);
     httpTestingController = TestBed.inject(HttpTestingController);
@@ -23,7 +23,7 @@ describe('MisproductosComponent', () => {
   beforeEach(() => {
     httpClient = TestBed.inject(HttpClient);
     httpTestingController = TestBed.inject(HttpTestingController);
-    fixture = TestBed.createComponent(MisproductosComponent);
+    fixture = TestBed.createComponent(AnadirProductosComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

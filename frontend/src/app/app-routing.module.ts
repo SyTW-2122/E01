@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import {ProductosComponent} from './components/productos/productos.component'
-import {MisproductosComponent} from './components/misproductos/misproductos.component'
+import { AnadirProductosComponent } from './components/anadir-productos/anadir-productos.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { SigninComponent } from './components/signin/signin.component';
-import { CatalogoComponent } from './components/catalogo/catalogo.component';
+import { EditorCatalogoComponent } from './components/editor-catalogo/editor-catalogo.component';
 import { AutorizacionGuard } from './autorizacion.guard';
+import { HomeComponent } from './components/home/home.component';
 
 //cada vez que visite una ruta estos componentes van a ser renderizados
 //queremos que se muestre por defecto,'productos'
@@ -14,16 +14,16 @@ import { AutorizacionGuard } from './autorizacion.guard';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/productos',
+    redirectTo: '/home',
     pathMatch: 'full' //exactamente nos redirecciona a esa ruta
   },
   {
-    path: 'productos',
-    component: ProductosComponent //renderizas el componente
+    path: 'home',
+    component: HomeComponent //renderizas el componente
   },
   {
-    path: 'misproductos',
-    component: MisproductosComponent,
+    path: 'anadirProductos',
+    component: AnadirProductosComponent,
     canActivate: [AutorizacionGuard]
   },
   {
@@ -35,8 +35,8 @@ const routes: Routes = [
     component: SigninComponent
   },
   {
-    path: 'catalogo',
-    component: CatalogoComponent,
+    path: 'editorCatalogo',
+    component: EditorCatalogoComponent,
     canActivate: [AutorizacionGuard]
   }
 ];

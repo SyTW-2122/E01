@@ -11,6 +11,6 @@ export class ProductosService {
   constructor(private http: HttpClient) { }
 
   fetchproductos() {
-    return this.http.get<any>(this.URL + '/misproductos');
+    return this.http.get<any>(this.URL + '/editarProducto');
   }
 }

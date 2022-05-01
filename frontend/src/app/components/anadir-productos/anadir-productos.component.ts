@@ -1,13 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductosService } from '../../services/productos.service';
 
-
 @Component({
-  selector: 'app-misproductos',
-  templateUrl: './misproductos.component.html',
-  styleUrls: ['./misproductos.component.css']
+  selector: 'app-anadir-productos',
+  templateUrl: './anadir-productos.component.html',
+  styleUrls: ['./anadir-productos.component.css']
 })
-export class MisproductosComponent implements OnInit {
+export class AnadirProductosComponent implements OnInit {
 
   constructor(private misprods: ProductosService) { }
 
