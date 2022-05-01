@@ -3,7 +3,7 @@ import  mongoose, {ConnectOptions, connect}  from 'mongoose';
 async function startConnection() {
   await connect('mongodb://localhost/angular-auth', 
   { useNewUrlParser: true,
-    useUnifiedTopology: true,
+    useUnifiedTopology: false,
   } as ConnectOptions);
   console.log('Conectado a la base de datos');
 }

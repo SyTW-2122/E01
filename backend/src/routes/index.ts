@@ -1,6 +1,6 @@
 import {Router, Request, Response, NextFunction} from 'express';
 import User from '../models/user';
-import { getProducts, createProduct } from '../controllers/product.controller';
+import { getProducts, createProduct, getProduct, deleteProduct, updateProduct } from '../controllers/product.controller';
 import multer from '../libs/multer';
 
 const router = Router();
@@ -91,7 +91,10 @@ router.route('/editarProducto')
   .get(getProducts)
   .post(multer.single('image'), createProduct);
 
-router.route('editarProducto/:id')
+router.route('/editarProducto/:id')
+  .get(getProduct)
+  .delete(deleteProduct)
+  .put(updateProduct)
 
 export default router;
 

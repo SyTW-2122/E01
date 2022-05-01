@@ -82,7 +82,10 @@ router.get('/productos', (req, res) => {
 router.route('/editarProducto')
     .get(product_controller_1.getProducts)
     .post(multer_1.default.single('image'), product_controller_1.createProduct);
-router.route('editarProducto/:id');
+router.route('/editarProducto/:id')
+    .get(product_controller_1.getProduct)
+    .delete(product_controller_1.deleteProduct)
+    .put(product_controller_1.updateProduct);
 exports.default = router;
 function verifyToken(req, res, next) {
     console.log("->");
