@@ -33,28 +33,6 @@ router.post('/signin', async (req, res) => {
     const token = jwt.sign({ _id: user._id }, 'secretkey');
     return res.status(200).json({ token });
 });
-router.get('/productos', (req, res) => {
-    res.json([
-        {
-            _id: 1,
-            name: 'Cerveza',
-            description: 'Cerveza de Canarias',
-            supermercado: "Mercadona"
-        },
-        {
-            _id: 2,
-            name: 'Leche',
-            description: 'Leche de Canarias',
-            supermercado: "Mercadona"
-        },
-        {
-            _id: 3,
-            name: 'Cereales',
-            description: 'Cereales de Canarias',
-            supermercado: "Mercadona"
-        }
-    ]);
-});
 /*router.get('/misproductos', verifyToken, (req, res) => {
   res.json([
     {
@@ -80,12 +58,12 @@ router.get('/productos', (req, res) => {
 //aqui hay que poner verifytoken
 //editar producto hace la funcion del catalogo, y añadir un producto
 router.route('/editarProducto')
-    .get(product_controller_1.getProducts)
-    .post(multer_1.default.single('image'), product_controller_1.createProduct);
+    .get(verifyToken, product_controller_1.getProducts)
+    .post(verifyToken, multer_1.default.single('image'), product_controller_1.createProduct);
 router.route('/editarProducto/:id')
-    .get(product_controller_1.getProduct)
-    .delete(product_controller_1.deleteProduct)
-    .put(product_controller_1.updateProduct);
+    .get(verifyToken, product_controller_1.getProduct)
+    .delete(verifyToken, product_controller_1.deleteProduct)
+    .put(verifyToken, product_controller_1.updateProduct);
 exports.default = router;
 function verifyToken(req, res, next) {
     console.log("->");

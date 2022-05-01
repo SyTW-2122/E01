@@ -7,6 +7,7 @@ import { SigninComponent } from './components/signin/signin.component';
 import { EditorCatalogoComponent } from './components/editor-catalogo/editor-catalogo.component';
 import { AutorizacionGuard } from './autorizacion.guard';
 import { HomeComponent } from './components/home/home.component';
+import { CatalogoComponent } from './components/catalogo/catalogo.component';
 
 //cada vez que visite una ruta estos componentes van a ser renderizados
 //queremos que se muestre por defecto,'productos'
@@ -22,7 +23,7 @@ const routes: Routes = [
     component: HomeComponent //renderizas el componente
   },
   {
-    path: 'anadirProductos',
+    path: 'home/Catalogo/new',
     component: AnadirProductosComponent,
     canActivate: [AutorizacionGuard]
   },
@@ -35,7 +36,12 @@ const routes: Routes = [
     component: SigninComponent
   },
   {
-    path: 'editorCatalogo',
+    path: 'home/Catalogo',
+    component: CatalogoComponent,
+    canActivate: [AutorizacionGuard]
+  },
+  {
+    path: 'home/Catalogo/:id',
     component: EditorCatalogoComponent,
     canActivate: [AutorizacionGuard]
   }

@@ -39,29 +39,6 @@ router.post('/signin', async (req: Request, res: Response) => {
 
 });
 
-router.get('/productos', (req, res) => {
-  res.json([
-    {
-      _id: 1,
-      name: 'Cerveza',
-      description: 'Cerveza de Canarias',
-      supermercado: "Mercadona"
-    },
-    {
-      _id: 2,
-      name: 'Leche',
-      description: 'Leche de Canarias',
-      supermercado: "Mercadona"
-    },
-    {
-      _id: 3,
-      name: 'Cereales',
-      description: 'Cereales de Canarias',
-      supermercado: "Mercadona"
-    }
-  ])
-});
-
 /*router.get('/misproductos', verifyToken, (req, res) => {
   res.json([
     {
@@ -88,13 +65,13 @@ router.get('/productos', (req, res) => {
 //aqui hay que poner verifytoken
 //editar producto hace la funcion del catalogo, y añadir un producto
 router.route('/editarProducto')
-  .get(getProducts)
-  .post(multer.single('image'), createProduct);
+  .get(verifyToken, getProducts)
+  .post(verifyToken, multer.single('image'), createProduct);
 
 router.route('/editarProducto/:id')
-  .get(getProduct)
-  .delete(deleteProduct)
-  .put(updateProduct)
+  .get(verifyToken, getProduct)
+  .delete(verifyToken, deleteProduct)
+  .put(verifyToken, updateProduct)
 
 export default router;
 

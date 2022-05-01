@@ -11,13 +11,4 @@ async function main() {
 
 main();
 
-
-
-
-//const cors = require('cors');
-
-
-//app.use(cors()); //agrega cabeceras a la peticion para poder
-//ser pasado del servidor de angular al servidor express
-
 //app.use('/api', require('./routes/index'));
