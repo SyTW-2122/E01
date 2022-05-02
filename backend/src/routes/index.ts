@@ -39,28 +39,6 @@ router.post('/signin', async (req: Request, res: Response) => {
 
 });
 
-/*router.get('/misproductos', verifyToken, (req, res) => {
-  res.json([
-    {
-      _id: 1,
-      name: 'Cerveza',
-      description: 'Cerveza de Canarias',
-      supermercado: "Mercadona"
-    },
-    {
-      _id: 2,
-      name: 'Leche',
-      description: 'Leche de Canarias',
-      supermercado: "Mercadona"
-    },
-    {
-      _id: 3,
-      name: 'Cereales',
-      description: 'Cereales de Canarias',
-      supermercado: "Mercadona"
-    }
-  ])
-});*/
 
 //aqui hay que poner verifytoken
 //editar producto hace la funcion del catalogo, y añadir un producto

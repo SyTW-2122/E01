@@ -18,20 +18,7 @@ export class AnadirProductosComponent implements OnInit {
 
   constructor(private misprods: ProductosService, private router: Router) { }
 
-  ngOnInit(): void {
-    this.getproductos();
-  }
-
-  getproductos() {
-    this.misprods.fetchproductos().subscribe(
-      res => {
-        console.log(res.body);
-      },
-      err => {
-        console.log("Error en mis productos");
-      }
-    )
-  }
+  ngOnInit(): void { }
 
   onProductoSelected(event: HtmlInputEvent): void {
     if (event.target.files && event.target.files[0]) {
@@ -43,9 +30,11 @@ export class AnadirProductosComponent implements OnInit {
     }
   }
 
-  uploadProducto(title: HTMLInputElement, price: HTMLInputElement, description: HTMLTextAreaElement): boolean {
+  uploadProducto(title: HTMLInputElement, price: HTMLInputElement, description: HTMLTextAreaElement) {
     console.log(title.value, price.value, description.value);
-    return false;
+    this.misprods.createProduct(title.value, price.value, description.value, this.file).subscribe(res => console.log(res),
+    err => console.log(err));
+    this.router.navigate(['/home/Catalogo']);
   }
 
 }

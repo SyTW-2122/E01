@@ -20,8 +20,6 @@ app.use(cors());
 //rutas
 app.use('/api', indexRoutes);
 
-
-
 //esta carpeta se usara para almacenar archivos pubblicos, para decir donde esta
 app.use('/uploads', express.static(path.resolve('uploads')));
 
