@@ -27,4 +27,12 @@ export class ProductosService {
   getProduct(id: string) {
     return this.http.get<product>(this.URL + '/editarProducto/' + id);
   }
+
+  deleteProduct(id: string) {
+    return this.http.delete(this.URL + '/editarProducto/' + id);
+  }
+
+  updateProduct(id: string, title: string, price: string, description: string) {
+    return this.http.put(this.URL + '/editarProducto/' + id, {title, price, description});
+  }
 }

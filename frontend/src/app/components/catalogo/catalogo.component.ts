@@ -25,13 +25,13 @@ export class CatalogoComponent implements OnInit {
   }
 
   selectedCard(id: string) {
-    this.productosService.getProduct(id).subscribe({
+    this.router.navigate(['/home/Catalogo/', id]);
+    /*this.productosService.getProduct(id).subscribe({
       next: (res) => console.log(res),
       error: (e) => console.error(e),
       
     });
-    console.log(id);
-    // this.router.navigate(['/photos', id]);
+    console.log(id);*/
   }
 
 }
