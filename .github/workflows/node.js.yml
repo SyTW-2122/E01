@@ -29,5 +29,4 @@ jobs:
     - run: npm install ./server
     - run: npm install
     - run: sudo systemctl start mongod
-    - run: mongosh
     - run: npm test
