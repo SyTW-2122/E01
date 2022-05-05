@@ -1,3 +1,5 @@
+[![Ejecución de pruebas](https://github.com/SyTW-2122/E01/actions/workflows/node.js.yml/badge.svg)](https://github.com/SyTW-2122/E01/actions/workflows/node.js.yml)
+
 # Miembros del equipo
 
 # Frontend

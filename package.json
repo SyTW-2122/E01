@@ -9,7 +9,8 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "test:prod": "ng test --browsers=ChromeHeadless --watch=false --code-coverage",
-    "test:cov": "ng test --code-coverage --no-watch --no-progress --browsers=ChromeHeadlessCI"
+    "test:cov": "ng test --code-coverage --no-watch --no-progress --browsers=ChromeHeadlessCI",
+    "coverage": "nyc npm run test:cov && cat ./coverage/frontend/lcov.info  | coveralls"
   },
   "private": true,
   "dependencies": {
@@ -39,6 +40,7 @@
     "@types/node": "^12.11.1",
     "codecov": "^3.8.3",
     "codelyzer": "^6.0.2",
+    "coveralls": "^3.1.1",
     "jasmine-core": "~4.0.0",
     "jasmine-spec-reporter": "^7.0.0",
     "karma": "~6.3.0",
@@ -47,6 +49,7 @@
     "karma-coverage-istanbul-reporter": "^3.0.3",
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "~1.7.0",
+    "nyc": "^15.1.0",
     "protractor": "^7.0.0",
     "ts-node": "^10.7.0",
     "tslint": "^6.1.3",
