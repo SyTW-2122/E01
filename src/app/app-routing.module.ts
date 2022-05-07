@@ -12,7 +12,7 @@ import { CatalogoComponent } from './components/catalogo/catalogo.component';
 //cada vez que visite una ruta estos componentes van a ser renderizados
 //queremos que se muestre por defecto,'productos'
 
-const routes: Routes = [
+export const routes: Routes = [
   {
     path: '',
     redirectTo: '/home',

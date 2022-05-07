@@ -18,8 +18,8 @@ router.post('/signup', async (req: Request, res: Response) => {
   res.status(200).json({token});
 
   console.log(newUser);
-  //console.log(name, email, password, type);
-  //res.send('register');
+  //console.log(email, password);
+  //res.status(200).send('register');
 });
 
 router.post('/signin', async (req: Request, res: Response) => {

@@ -18,8 +18,8 @@ router.post('/signup', async (req, res) => {
     const token = await jwt.sign({ _id: newUser._id }, 'secretkey');
     res.status(200).json({ token });
     console.log(newUser);
-    //console.log(name, email, password, type);
-    //res.send('register');
+    //console.log(email, password);
+    //res.status(200).send('register');
 });
 router.post('/signin', async (req, res) => {
     const { email, password } = req.body;
