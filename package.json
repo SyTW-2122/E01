@@ -8,9 +8,18 @@
     "build:prod": "ng build --prod",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
+    "lint": "ng lint",
+    "e2e": "ng e2e",
     "test:prod": "ng test --browsers=ChromeHeadless --watch=false --code-coverage",
     "test:cov": "ng test --code-coverage --no-watch --no-progress --browsers=ChromeHeadlessCI",
-    "coverage": "nyc npm run test:cov && cat ./coverage/frontend/lcov.info  | coveralls"
+    "coverage": "nyc npm run test:cov && cat ./coverage/frontend/lcov.info  | coveralls",
+    "cypress": "npx cypress run",
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run",
+    "webdriver": "webdriver-manager start --standalone",
+    "webdriver:update": "webdriver-manager update",
+    "compile-protractor": "tsc -p tsconfig.e2e.json",
+    "protractor": "protractor protractor.conf.js"
   },
   "private": true,
   "dependencies": {
@@ -28,6 +37,7 @@
     "rxjs": "~7.5.0",
     "travis": "^0.1.1",
     "tslib": "^2.3.0",
+    "webdriver-manager": "^12.1.8",
     "zone.js": "~0.11.4"
   },
   "devDependencies": {
@@ -35,12 +45,14 @@
     "@angular/cli": "~13.3.3",
     "@angular/compiler-cli": "~13.3.0",
     "@angular/language-service": "^13.3.4",
+    "@cypress/schematic": "^1.6.0",
     "@types/jasmine": "~3.10.0",
     "@types/jasminewd2": "^2.0.10",
     "@types/node": "^12.11.1",
     "codecov": "^3.8.3",
     "codelyzer": "^6.0.2",
     "coveralls": "^3.1.1",
+    "cypress": "latest",
     "jasmine-core": "~4.0.0",
     "jasmine-spec-reporter": "^7.0.0",
     "karma": "~6.3.0",

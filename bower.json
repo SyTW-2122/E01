@@ -1,0 +1,10 @@
+{
+  "name": "frontend",
+  "description": "ejecucion de pruebas end to end",
+  "main": "",
+  "authors": [
+    "Yago Perez Molanes <alu0101254678@ull.edu.es>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/SyTW-2122/E01"
+}
