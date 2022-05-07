@@ -7,6 +7,9 @@ import { RegistroService } from '../../services/registro.service';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { By } from '@angular/platform-browser';
+
 describe('SigninComponent', () => {
   let component: SigninComponent;
   let registro: RegistroService;
@@ -18,7 +21,9 @@ describe('SigninComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [HttpClientTestingModule,
-      RouterTestingModule],
+      RouterTestingModule,
+      ReactiveFormsModule,
+      FormsModule],
       declarations: [ SigninComponent ]
     })
     .compileComponents();
@@ -44,6 +49,6 @@ describe('SigninComponent', () => {
     expect(signInComponent).toBeTruthy();
     expect(signInComponent.user).toBeDefined();
     expect(registro.signIn({email: "Yago", password: "1234"})).toBeDefined();
-    // expect(signInComponent.signIn()).toBeTruthy();
+    //expect(signInComponent.signIn()).toBeTruthy();
   });
 });
