@@ -1,4 +1,4 @@
-[![Ejecución de pruebas](https://github.com/SyTW-2122/E01/actions/workflows/node.js.yml/badge.svg)](https://github.com/SyTW-2122/E01/actions/workflows/node.js.yml)
+[![Ejecución de pruebas](https://github.com/SyTW-2122/E01/actions/workflows/node.js.yml/badge.svg)](https://github.com/SyTW-2122/E01/actions/workflows/node.js.yml) [![Coverage Status](https://coveralls.io/repos/github/SyTW-2122/E01/badge.svg?branch=main)](https://coveralls.io/github/SyTW-2122/E01?branch=main)
 
 # Miembros del equipo
 
