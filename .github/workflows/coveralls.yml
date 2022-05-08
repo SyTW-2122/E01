@@ -1,0 +1,26 @@
+name: Coveralls
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  coveralls:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Clonando repositorio
+      uses: actions/checkout@v3
+    - name: Use Node.js 18.x
+      uses: actions/setup-node@v3
+      with:
+        node-version: 18.x
+        cache: 'npm'
+    - name: Instalando dependencias
+      run: npm install ./server
+      run: npm install
+    - name: Generando informacion de coveralls
+      

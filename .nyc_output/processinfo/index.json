@@ -1,1 +1,0 @@
-{"processes":{"5c2ec032-4650-4baa-804f-ad3f0ae0534b":{"parent":null,"children":["7dfc5ec4-9010-4ccf-b4d1-f5d7d56e6154"]},"7dfc5ec4-9010-4ccf-b4d1-f5d7d56e6154":{"parent":"5c2ec032-4650-4baa-804f-ad3f0ae0534b","children":[]}},"files":{"/home/yago/Documentos/Proyecto-SyTW/E01/karma.conf.js":["7dfc5ec4-9010-4ccf-b4d1-f5d7d56e6154"]},"externalIds":{}}
