@@ -19,12 +19,9 @@ jobs:
       with:
         node-version: 18.x
         cache: 'npm'
-    - name: Instalando dependencias
       run: npm install ./server
       run: npm install
-    - name: Generando informacion de coveralls
-      run: npm run test:cov
-    - name: Coveralls github actions
+      run: npm run test:cov  
       uses: coverallsapp/github-action@master
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
