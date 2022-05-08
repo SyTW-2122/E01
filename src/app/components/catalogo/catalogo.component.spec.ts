@@ -26,4 +26,8 @@ describe('CatalogoComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('productos vacios e inicializacion', () => {
+    expect(component.products).toBeTruthy();
+  });
 });

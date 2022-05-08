@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">42.85% </span>
+                <span class="strong">92.85% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>6/14</span>
+                <span class='fraction'>13/14</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50% </span>
+                <span class="strong">83.33% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>3/6</span>
+                <span class='fraction'>5/6</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">38.46% </span>
+                <span class="strong">92.3% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>5/13</span>
+                <span class='fraction'>12/13</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -110,29 +110,29 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">13x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">13x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -152,13 +152,13 @@ export class ProductosService {
 &nbsp;
   constructor(private http: HttpClient) { }
 &nbsp;
-<span class="fstat-no" title="function not covered" >  createProduct(</span>title: string, price: string, description: string, photo: File) {
-    const fd = <span class="cstat-no" title="statement not covered" >new FormData();</span>
-<span class="cstat-no" title="statement not covered" >    fd.append('title', title);</span>
-<span class="cstat-no" title="statement not covered" >    fd.append('price', price);</span>
-<span class="cstat-no" title="statement not covered" >    fd.append('description', description);</span>
-<span class="cstat-no" title="statement not covered" >    fd.append('image', photo);</span>
-<span class="cstat-no" title="statement not covered" >    return this.http.post(this.URL + '/editarProducto', fd);</span>
+  createProduct(title: string, price: string, description: string, photo: File) {
+    const fd = new FormData();
+    fd.append('title', title);
+    fd.append('price', price);
+    fd.append('description', description);
+    fd.append('image', photo);
+    return this.http.post(this.URL + '/editarProducto', fd);
   }
 &nbsp;
   getProducts() {
@@ -169,8 +169,8 @@ export class ProductosService {
     return this.http.get&lt;product&gt;(this.URL + '/editarProducto/' + id);
   }
 &nbsp;
-<span class="fstat-no" title="function not covered" >  deleteProduct(</span>id: string) {
-<span class="cstat-no" title="statement not covered" >    return this.http.delete(this.URL + '/editarProducto/' + id);</span>
+  deleteProduct(id: string) {
+    return this.http.delete(this.URL + '/editarProducto/' + id);
   }
 &nbsp;
 <span class="fstat-no" title="function not covered" >  updateProduct(</span>id: string, title: string, price: string, description: string) {
@@ -184,7 +184,7 @@ export class ProductosService {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at Sat May 07 2022 19:57:04 GMT+0100 (hora de verano de Europa occidental)
+                at Sun May 08 2022 12:33:01 GMT+0100 (hora de verano de Europa occidental)
             </div>
         <script src="../../prettify.js"></script>
         <script>
