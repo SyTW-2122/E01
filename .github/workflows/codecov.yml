@@ -1,4 +1,4 @@
-name: Run Test Codecov
+name: Codecov cubrimientp
 
 on:
   push:
@@ -24,6 +24,8 @@ jobs:
       run: npm install -g codecov
 
     # pipeline actions
+    - run: npm install ./server
+    - run: npm install
     - run: npm run test:cov
     - run: codecov
       env:
