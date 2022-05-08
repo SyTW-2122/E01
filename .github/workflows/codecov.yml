@@ -1,0 +1,30 @@
+name: Run Test Codecov
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  Codecov:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Clonando repositorio
+      uses: actions/checkout@v3
+
+    - name: Use Node.js 18.x
+      uses: actions/setup-node@v3
+      with:
+        node-version: 18.x
+
+    - name: Install codecov dependency
+      run: npm install -g codecov
+
+    # pipeline actions
+    - run: npm run test:cov
+    - run: codecov
+      env:
+        CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
