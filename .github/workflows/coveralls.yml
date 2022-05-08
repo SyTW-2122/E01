@@ -19,10 +19,10 @@ jobs:
       with:
         node-version: 18.x
         cache: 'npm'
-      run: npm install ./server
-      run: npm install
-      run: npm run test:cov  
-      uses: coverallsapp/github-action@master
+    - run: npm install ./server
+    - run: npm install
+    - run: npm run test:cov  
+    - uses: coverallsapp/github-action@master
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
       
