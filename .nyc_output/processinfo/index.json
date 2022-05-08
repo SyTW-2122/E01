@@ -1,1 +1,0 @@
-{"processes":{"bc82096a-f341-4f0a-ab88-531f09f6d638":{"parent":null,"children":["c58e07b6-0dc0-4d89-913b-5b64bb9f628e"]},"c58e07b6-0dc0-4d89-913b-5b64bb9f628e":{"parent":"bc82096a-f341-4f0a-ab88-531f09f6d638","children":[]}},"files":{"/home/usuario/E01/karma.conf.js":["c58e07b6-0dc0-4d89-913b-5b64bb9f628e"]},"externalIds":{}}

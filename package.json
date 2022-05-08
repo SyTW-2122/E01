@@ -13,7 +13,6 @@
     "test:prod": "ng test --browsers=ChromeHeadless --watch=false --code-coverage",
     "test:cov": "ng test --code-coverage --no-watch --no-progress --browsers=ChromeHeadlessCI",
     "coverage": "nyc npm run test:cov && cat ./coverage/frontend/lcov.info  | coveralls",
-    "coveralls": "nyc npm test --code-coverage --no-watch --no-progress --browsers=ChromeHeadlessCI",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run",
     "webdriver": "webdriver-manager start --standalone",
