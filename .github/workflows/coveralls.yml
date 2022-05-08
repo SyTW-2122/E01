@@ -23,4 +23,9 @@ jobs:
       run: npm install ./server
       run: npm install
     - name: Generando informacion de coveralls
+      run: npm run test:cov
+    - name: Coveralls github actions
+      uses: coverallsapp/github-action@master
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
       
