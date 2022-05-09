@@ -1,4 +1,4 @@
-name: Codecov cubrimientp
+name: Codecov cubrimiento
 
 on:
   push:
