@@ -1,4 +1,4 @@
-[![Ejecución de pruebas](https://github.com/SyTW-2122/E01/actions/workflows/node.js.yml/badge.svg)](https://github.com/SyTW-2122/E01/actions/workflows/node.js.yml) [![Coverage Status](https://coveralls.io/repos/github/SyTW-2122/E01/badge.svg?branch=main)](https://coveralls.io/github/SyTW-2122/E01?branch=main)
+[![Ejecución de pruebas](https://github.com/SyTW-2122/E01/actions/workflows/node.js.yml/badge.svg)](https://github.com/SyTW-2122/E01/actions/workflows/node.js.yml) [![Coverage Status](https://coveralls.io/repos/github/SyTW-2122/E01/badge.svg?branch=main)](https://coveralls.io/github/SyTW-2122/E01?branch=main) [![codecov](https://codecov.io/gh/SyTW-2122/E01/branch/main/graph/badge.svg?token=TYLW9UXF2F)](https://codecov.io/gh/SyTW-2122/E01)
 
 # Miembros del equipo
 
