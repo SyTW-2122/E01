@@ -18,7 +18,9 @@ export class AnadirProductosComponent implements OnInit {
 
   constructor(private misprods: ProductosService, private router: Router) { }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+    console.log('Accediendo a la página añadir un producto');
+   }
 
   onProductoSelected(event: HtmlInputEvent): void {
     if (event.target.files && event.target.files[0]) {

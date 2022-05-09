@@ -20,6 +20,7 @@ export class SignupComponent implements OnInit {
     ) { }
 
   ngOnInit(): void {
+    console.log('Accediendo al componente de registro de usuario');
   }
 
   signUp() { //el subscribe es la respuesta que me va a dar el servidor

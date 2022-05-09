@@ -20,6 +20,7 @@ export class SigninComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    console.log('Accediendo al componente de inicio de sesión');
   }
 
   signIn() {
