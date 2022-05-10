@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
 
 // Other imports
-import { TestBed } from '@angular/core/testing';
+import { async, TestBed } from '@angular/core/testing';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 
 import { ProductosService } from './productos.service';
@@ -18,7 +18,8 @@ describe('ProductosService', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule]
+      imports: [HttpClientTestingModule],
+      providers: [ProductosService]
     });
     // Inject the http service and test controller for each test
     httpClient = TestBed.inject(HttpClient);
@@ -55,6 +56,18 @@ describe('ProductosService', () => {
     expect(service).toBeTruthy();
 
     expect(service.getProduct("1112")).toBeTruthy();
+  });
+
+  it('comprobar si la funcion actualizar un producto esta definida', () => {
+    service = new ProductosService(httpClient);
+    expect(service).toBeTruthy();
+
+    let title = "zanahoria";
+    let price = "3 euro";
+    let description = "zanahorias frescas";
+    let imagePath: File;
+
+    expect(service.updateProduct('1112',title, price, description)).toBeDefined();
   });
 
   it('comprobar si la funcion elimina un producto esta definida', () => {
