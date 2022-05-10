@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -12,12 +11,12 @@ export class RegistroService {
 
   constructor(private http: HttpClient) { }
 
-  signUp(user: any): Observable<any> {
-    return this.http.post<any>(this.URL + '/signup', user);
+  signUp(user: any): Observable<any>{
+    return this.http.post(this.URL + '/signup', user);
   }
 
   signIn(user: any): Observable<any> {
-    return this.http.post<any>(this.URL + '/signin', user);
+    return this.http.post(this.URL + '/signin', user);
   }
  
   iniciadosesion(): Boolean {

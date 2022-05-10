@@ -1,7 +1,7 @@
 // Http testing module and mocking controller
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
+import { HttpClientModule } from '@angular/common/http';
 import { Router } from '@angular/router';
-import { RouterTestingModule } from '@angular/router/testing';
 
 // Other imports
 import { async, TestBed } from '@angular/core/testing';
@@ -18,7 +18,8 @@ describe('ProductosService', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule],
+      imports: [HttpClientTestingModule,
+      HttpClientModule],
       providers: [ProductosService]
     });
     // Inject the http service and test controller for each test

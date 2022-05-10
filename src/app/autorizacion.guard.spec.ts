@@ -1,37 +1,49 @@
-import { TestBed, fakeAsync, tick, inject } from '@angular/core/testing';
-import { Location } from "@angular/common";
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { Router } from '@angular/router';
-import { RouterTestingModule } from '@angular/router/testing';
+import { ComponentFixture, TestBed, fakeAsync, tick, inject, async } from '@angular/core/testing';
+import { HttpClientModule } from '@angular/common/http';
+import { RegistroService } from './services/registro.service';
 
 import { AutorizacionGuard } from './autorizacion.guard';
-import { RegistroService } from './services/registro.service';
-import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
+import { SigninComponent } from './components/signin/signin.component';
+
+import { Router } from '@angular/router';
+import { RouterTestingModule } from '@angular/router/testing';
+import { Location } from "@angular/common";
 
 import { routes } from './app-routing.module'
 
 describe('AutorizacionGuard', () => {
-  let httpClient: HttpClient;
-  let httpTestingController: HttpTestingController;
-  let router: Router;
   let guard: AutorizacionGuard;
-  let registroService: RegistroService;
+  let service: RegistroService;
+  let component: SigninComponent;
+  let fixture: ComponentFixture<SigninComponent>;
+  let router: Router;
   let location: Location;
-  let fixture;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule,
-        RouterTestingModule.withRoutes(routes)]
+      imports: [HttpClientModule,
+        RouterTestingModule.withRoutes(routes)],
+      declarations: [SigninComponent],
+      providers: [RegistroService]
     });
-    // Inject the http service and test controller for each test
-    httpClient = TestBed.inject(HttpClient);
-    registroService = TestBed.inject(RegistroService);
-    httpTestingController = TestBed.inject(HttpTestingController);
-    router = TestBed.inject(Router);
     guard = TestBed.inject(AutorizacionGuard);
+    service = TestBed.inject(RegistroService); 
+    fixture = TestBed.createComponent(SigninComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+    router = TestBed.inject(Router);
     location = TestBed.inject(Location);
     router.initialNavigation();
+
+    service.signIn({email: "yago", password: "1234"});
+
+    let email: string = "yago";
+    let password: string = "1234";
+    component.user.email = email;
+    component.user.password = password;
+
+    component.signIn();
+
   });
 
   it('should be created', () => {
@@ -50,10 +62,25 @@ describe('AutorizacionGuard', () => {
 
   it('no debería iniciar sesión', fakeAsync(() => {
     router.navigate(['/home/Catalogo']);
-    tick();
-    registroService = new RegistroService(httpClient);
-    guard = new AutorizacionGuard(registroService, router);
+    tick(2500);
+    expect(location.path()).toBe('/home/Catalogo');
+  }));
+
+  it('deberia haber iniciado sesion', fakeAsync(() => {
+    router.navigate(['/home/Catalogo']);
+    tick(2500);
+    expect(guard.canActivate()).toEqual(true);
+    tick(2500);
+    expect(location.path()).toBe('/home/Catalogo');
+  }));
+
+  it('si se elimina el token vuelve a tener que iniciar sesion', fakeAsync(() => {
+    localStorage.removeItem('token');
+    router.navigate(['/home/Catalogo']);
+    tick(2500);
     expect(guard.canActivate()).toEqual(false);
+    tick(2500);
     expect(location.path()).toBe('/signin');
   }));
+
 });

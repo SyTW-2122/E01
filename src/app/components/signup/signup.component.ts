@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RegistroService } from '../../services/registro.service';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-signup',
@@ -35,7 +36,7 @@ export class SignupComponent implements OnInit {
         console.log(err);
       },
     )
-    //console.log(this.user);
+    return 'hola';
   }
 
 }
