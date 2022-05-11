@@ -4,7 +4,7 @@ import { SignupComponent } from './signup.component';
 import { RegistroService } from '../../services/registro.service';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterTestingModule } from '@angular/router/testing';
-/*
+
 describe('SignupComponent', () => {
   let component: SignupComponent;
   let fixture: ComponentFixture<SignupComponent>;
@@ -17,17 +17,16 @@ describe('SignupComponent', () => {
       providers: [RegistroService]
     })
     .compileComponents();
+    fixture = TestBed.createComponent(SignupComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+    component.ngOnInit();
   });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(SignupComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
-    component.ngOnInit();
-    console.log(component.user);
-    component.user.email = "Sara";
-    component.user.password = "contraseña";
-    component.signUp();
   });
 
   it('should create', () => {
@@ -39,10 +38,11 @@ describe('SignupComponent', () => {
   });
 
   it('comprobar que se ha registrado', () => {
-    expect(component.user).toEqual({email: "Sara", password: "contraseña"});
-    expect(component.user.email).toContain('Sara');
-    expect(component.user.password).toContain('contraseña');
+    component.user.email = "yago";
+    component.user.password = "1234";
+    expect(component.user).toEqual({email: "yago", password: "1234"});
+    expect(component.user.email).toContain('yago');
+    expect(component.user.password).toContain('1234');
     expect(component.signUp()).toBeTruthy();
   });
 });
-*/
