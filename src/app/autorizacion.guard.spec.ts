@@ -61,10 +61,19 @@ describe('AutorizacionGuard', () => {
   }));
 
   it('no debería iniciar sesión', async(() => {
+    service.signIn({email: "yago", password: "1234"});
+
+    let email: string = "yago";
+    let password: string = "1234";
+    component.user.email = email;
+    component.user.password = password;
+
+    component.signIn();
     router.navigate(['/home/Catalogo']);
     setTimeout(() => {
       expect(location.path()).toBe('/home/Catalogo');
     }, 2000);
+
   }));
 
   it('deberia haber iniciado sesion', fakeAsync(() => {
