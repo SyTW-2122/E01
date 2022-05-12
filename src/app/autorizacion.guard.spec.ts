@@ -70,11 +70,7 @@ describe('AutorizacionGuard', () => {
 
     setTimeout(() => {
       component.signIn();
-    }, 2000);
-
-    setTimeout(() => {
-      router.navigate(['/home/Catalogo']);
-    }, 2000);
+    }, 4000);
 
     setTimeout(() => {
       expect(location.path()).toBe('/home/Catalogo');
