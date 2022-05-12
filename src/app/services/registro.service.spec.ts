@@ -38,7 +38,7 @@ describe('RegistroService', () => {
     )
   }));
 
-  it('inicia sesion con un usuario', async(() => {
+  /*it('inicia sesion con un usuario', async(() => {
     let user = {
       email: "yaguets",
       password: "1234",
@@ -46,7 +46,7 @@ describe('RegistroService', () => {
     service.signIn(user).subscribe(
       (response) => expect(response.json).not.toBeNull(),
     )
-  }));
+  }));*/
 
   it('Como el token se establece en el componente y no en el servicio, entonces devolvera falso, aunque realmente haya respuesta del servidor', fakeAsync(async () => {
     expect(service.signIn({
