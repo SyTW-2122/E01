@@ -60,10 +60,11 @@ describe('AutorizacionGuard', () => {
     expect(done).toBeTruthy();
   }));
 
-  it('no debería iniciar sesión', fakeAsync(() => {
+  it('no debería iniciar sesión', async(() => {
     router.navigate(['/home/Catalogo']);
-    tick(2500);
-    expect(location.path()).toBe('/home/Catalogo');
+    setTimeout(() => {
+      expect(location.path()).toBe('/home/Catalogo');
+    }, 2000);
   }));
 
   it('deberia haber iniciado sesion', fakeAsync(() => {
@@ -76,13 +77,14 @@ describe('AutorizacionGuard', () => {
     }
   }));
 
-  it('si se elimina el token vuelve a tener que iniciar sesion', fakeAsync(() => {
+  it('si se elimina el token vuelve a tener que iniciar sesion', async(() => {
     localStorage.removeItem('token');
     router.navigate(['/home/Catalogo']);
-    tick(2500);
     expect(guard.canActivate()).toEqual(false);
-    tick(2500);
-    expect(location.path()).toBe('/signin');
+    setTimeout(() => {
+      expect(location.path()).toBe('/signin');
+    }, 2000);
+    // expect(location.path()).toBe('/signin');
   }));
 
 });
