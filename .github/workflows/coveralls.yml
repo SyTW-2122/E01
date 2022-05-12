@@ -21,6 +21,7 @@ jobs:
         cache: 'npm'
     - run: npm install ./server
     - run: npm install
+    - run: sudo systemctl start mongod
     - run: npm run test:cov
     - name: Accion de coveralls 
       uses: coverallsapp/github-action@master

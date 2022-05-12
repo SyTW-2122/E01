@@ -26,6 +26,7 @@ jobs:
     # pipeline actions
     - run: npm install ./server
     - run: npm install
+    - run: sudo systemctl start mongod
     - run: npm run test:cov
     - run: codecov
       env:
