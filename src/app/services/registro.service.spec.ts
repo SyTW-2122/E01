@@ -16,9 +16,7 @@ describe('RegistroService', () => {
       email: "yaguets",
       password: "1234",
     }
-    service.signIn(user).subscribe(
-      (response) => expect(response.json).not.toBeNull(),
-    )
+    service.signIn(user);
     
   });
 
