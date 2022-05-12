@@ -16,7 +16,10 @@ describe('RegistroService', () => {
       email: "yaguets",
       password: "1234",
     }
-    service.signIn(user);
+    service.signIn(user).subscribe(
+      (response) => expect(response.json).not.toBeNull(),
+    )
+    
   });
 
   it('should be created', () => {
@@ -28,7 +31,7 @@ describe('RegistroService', () => {
     expect(service.getURL()).toEqual(URI);
   });
 
-  it('se crea un usuario', async(() => {
+  /*it('se crea un usuario', async(() => {
     let user = {
       email: "yaguets",
       password: "1234",
@@ -36,7 +39,7 @@ describe('RegistroService', () => {
     service.signUp(user).subscribe(
       (response) => expect(response.json).not.toBeNull(),
     )
-  }));
+  }));*/
 
   /*it('inicia sesion con un usuario', async(() => {
     let user = {
