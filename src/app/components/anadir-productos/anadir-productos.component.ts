@@ -20,7 +20,7 @@ export class AnadirProductosComponent implements OnInit {
 
   ngOnInit(): void {
     console.log('Accediendo a la página añadir un producto');
-   }
+  }
 
   onProductoSelected(event: HtmlInputEvent): void {
     if (event.target.files && event.target.files[0]) {

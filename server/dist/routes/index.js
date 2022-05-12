@@ -16,19 +16,22 @@ router.post('/signup', async (req, res) => {
     const newUser = new user_1.default({ name, email, password, type });
     await newUser.save();
     const token = await jwt.sign({ _id: newUser._id }, 'secretkey');
-    res.status(200).json({ token });
     console.log(newUser);
+    return res.status(200).json({ token });
     //console.log(email, password);
     //res.status(200).send('register');
 });
 router.post('/signin', async (req, res) => {
     const { email, password } = req.body;
     const user = await user_1.default.findOne({ email });
-    if (!user) {
-        return res.status(401).send("El correo no existe");
+    if (email == '' && password == '') {
+        return res.status(401).send("Los campos de email o contraseña están vacíos");
     }
-    if (user.password !== password) {
-        return res.status(401).send("La contraseña no existe");
+    if (!user) {
+        return res.status(401).send("El correo no existe, debe proporcionar uno");
+    }
+    if (user && user.password !== password) {
+        return res.status(401).send("La contraseña que ha proporcionado es errónea");
     }
     const token = jwt.sign({ _id: user._id }, 'secretkey');
     return res.status(200).json({ token });

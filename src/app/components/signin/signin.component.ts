@@ -14,6 +14,9 @@ export class SigninComponent implements OnInit {
     password: ''
   }
 
+  message: string;
+  messageClass: string;
+
   constructor(
     private registro: RegistroService,
     private router: Router
@@ -28,10 +31,18 @@ export class SigninComponent implements OnInit {
     .subscribe(
       res => {
         console.log(res);
-        localStorage.setItem('token', res.token);
-        this.router.navigate(['/home/Catalogo']);
+        this.messageClass = 'alert alert-success';
+        this.message = 'Ha iniciado sesión satisfactoriamente';
+        setTimeout(() => {
+          localStorage.setItem('token', res.token);
+          this.router.navigate(['/home/Catalogo']);
+        },2000);
       },
-      err => console.log(err)
+      err => {
+        console.log(err);
+        this.messageClass = 'alert alert-danger';
+        this.message = 'Error de estado: ' + err.status + ': ' + err.statusText + ',  ' + err.error;
+      }
     )
     //console.log(this.user);
   }

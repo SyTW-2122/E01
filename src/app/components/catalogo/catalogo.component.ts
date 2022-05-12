@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ProductosService } from 'src/app/services/productos.service';
+import { product } from 'src/app/interfaces/product';
 
 @Component({
   selector: 'app-catalogo',
@@ -18,7 +19,7 @@ export class CatalogoComponent implements OnInit {
     this.productosService.getProducts().subscribe(
       res => {
         console.log(res);
-        this.products = res;
+        this.products = res
       },  
       err => console.log(err),
     );

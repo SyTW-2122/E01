@@ -48,14 +48,20 @@ describe('RegistroService', () => {
     )
   }));
 
-  it('Como el token se establece en el componente y no en el servicio, entonces devolvera falso, aunque realmente haya respuesta del servidor', fakeAsync(() => {
+  it('Como el token se establece en el componente y no en el servicio, entonces devolvera falso, aunque realmente haya respuesta del servidor', fakeAsync(async () => {
     expect(service.signIn({
       email: "yaguets",
       password: "1234",
     })).toBeTruthy();
-    flush();
-    tick(1000);
-    expect(service.getToken()).not.toBeNull();
+    //tick();
+    //tick();
+    if (service.iniciadosesion()) {
+      await expect(service.getToken()).not.toBeNull();
+      console.log('Si que ha iniciado sesion');
+    } else {
+      await expect(service.getToken()).toBeNull();
+      console.log('No ha iniciado sesión');
+    };
   }));
 
 });

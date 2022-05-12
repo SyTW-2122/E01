@@ -67,11 +67,13 @@ describe('AutorizacionGuard', () => {
   }));
 
   it('deberia haber iniciado sesion', fakeAsync(() => {
-    router.navigate(['/home/Catalogo']);
-    tick(2500);
-    expect(guard.canActivate()).toEqual(true);
-    tick(2500);
-    expect(location.path()).toBe('/home/Catalogo');
+    if (localStorage.getItem('token')) {
+      router.navigate(['/home/Catalogo']);
+      tick(2500);
+      expect(guard.canActivate()).toEqual(true);
+      tick(2500);
+      expect(location.path()).toBe('/home/Catalogo');
+    }
   }));
 
   it('si se elimina el token vuelve a tener que iniciar sesion', fakeAsync(() => {

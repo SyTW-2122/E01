@@ -1,5 +1,19 @@
-<div class="row">
-  <div class="col-md-4 mx-auto">
+<div class="jumbotron signup-header">
+  <div class="caption">
+      <h1>Market Management M&M</h1>
+      <p>¡Bienvenid@ a Market Management M&M! ¡La web de gestión de productos de nuestro supermercado! ¡En esta 
+        página podrás registrarte con tus credenciales y acceder a nuestros servicios!</p>
+  </div>
+</div>
+
+<div class="row show-hide-message">
+  <div [ngClass]="messageClass">
+    {{ message }}
+  </div>
+</div>
+
+<div class="thumbnail">
+  <div class="col-md-6 mx-auto">
     <div class="card"> 
       <div class="card-header">
         Registrarse
@@ -20,3 +34,5 @@
     </div>
   </div>
 </div>
+
+

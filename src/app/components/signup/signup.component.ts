@@ -15,6 +15,9 @@ export class SignupComponent implements OnInit {
     password: ''
   }
 
+  message: string;
+  messageClass: string;
+
   constructor(
     private Registro: RegistroService,
     private router: Router
@@ -34,6 +37,8 @@ export class SignupComponent implements OnInit {
       err => {
         //console.log('error');
         console.log(err);
+        this.messageClass = 'alert alert-danger';
+        this.message = 'Error de estado: ' + err.status + ': ' + err.statusText + ',  ' + err.error;
       },
     )
     return 'hola';

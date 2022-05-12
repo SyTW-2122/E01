@@ -32,11 +32,15 @@ export class EditorCatalogoComponent implements OnInit {
   }
 
   deleteProduct(id: string) {
-    this.productosService.deleteProduct(id)
-      .subscribe(res => {
-        console.log(res)
+    this.productosService.deleteProduct(id).subscribe(
+      res => 
+      { console.log(res);
         this.router.navigate(['/home/Catalogo']);
-      })
+      }, 
+      err => {
+        console.log(err);
+        this.router.navigate([`/home/editorCatalogo/${id}`])
+      });  
   }
 
   updateProduct(title: HTMLInputElement, price: HTMLInputElement, description: HTMLInputElement) {
