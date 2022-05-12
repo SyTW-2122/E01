@@ -35,7 +35,7 @@ describe('RegistroService', () => {
       password: "1234",
     }
     service.signUp(user).subscribe(
-      (response) => expect(response.json).not.toBeNull(),
+      (response) => expect(response).not.toBeNull(),
     )
   }));
 
@@ -45,7 +45,7 @@ describe('RegistroService', () => {
       password: "1234",
     }
     service.signIn(user).subscribe(
-      (response) => expect(response.json).not.toBeNull(),
+      (response) => expect(response).not.toBeNull(),
     )
   }));
 
