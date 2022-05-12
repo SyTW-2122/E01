@@ -70,7 +70,7 @@ describe('AutorizacionGuard', () => {
 
     setTimeout(() => {
       component.signIn();
-    }, 4000);
+    }, 2000);
 
     setTimeout(() => {
       expect(location.path()).not.toBeNull();
