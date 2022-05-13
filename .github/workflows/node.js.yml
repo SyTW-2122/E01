@@ -30,5 +30,4 @@ jobs:
     - run: npm install
     - run: sudo systemctl start mongod
     - run: cd server && node dist/index.js
-    - run: cd ..
     - run: npm run test:cov
