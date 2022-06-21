@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">78.57% </span>
+                <span class="strong">64.7% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>11/14</span>
+                <span class='fraction'>11/17</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">80% </span>
+                <span class="strong">66.66% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>4/5</span>
+                <span class='fraction'>4/6</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">76.92% </span>
+                <span class="strong">62.5% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>10/13</span>
+                <span class='fraction'>10/16</span>
             </div>
         
             
@@ -109,7 +109,11 @@
 <a name='L44'></a><a href='#L44'>44</a>
 <a name='L45'></a><a href='#L45'>45</a>
 <a name='L46'></a><a href='#L46'>46</a>
-<a name='L47'></a><a href='#L47'>47</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L47'></a><a href='#L47'>47</a>
+<a name='L48'></a><a href='#L48'>48</a>
+<a name='L49'></a><a href='#L49'>49</a>
+<a name='L50'></a><a href='#L50'>50</a>
+<a name='L51'></a><a href='#L51'>51</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -141,15 +145,19 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
@@ -186,16 +194,20 @@ export class SignupComponent implements OnInit {
 &nbsp;
   signUp() { //el subscribe es la respuesta que me va a dar el servidor
     this.Registro.signUp(this.user).subscribe(
-      res =&gt; {
-        console.log(res);
-        localStorage.setItem('token', res.token);
-        this.router.navigate(['/home/Catalogo']);
+<span class="fstat-no" title="function not covered" >      res </span>=&gt; {
+<span class="cstat-no" title="statement not covered" >        console.log(res);</span>
+<span class="cstat-no" title="statement not covered" >        this.messageClass = 'alert alert-success';</span>
+<span class="cstat-no" title="statement not covered" >        this.message = 'Se ha registrado satisfactoriamente';</span>
+<span class="cstat-no" title="statement not covered" >        setTimeout(<span class="fstat-no" title="function not covered" >() =</span>&gt; {</span>
+<span class="cstat-no" title="statement not covered" >          localStorage.setItem('token', res.token);</span>
+<span class="cstat-no" title="statement not covered" >          this.router.navigate(['/home/Catalogo']);</span>
+        },2000);
       },
-<span class="fstat-no" title="function not covered" >      err </span>=&gt; {
+      err =&gt; {
         //console.log('error');
-<span class="cstat-no" title="statement not covered" >        console.log(err);</span>
-<span class="cstat-no" title="statement not covered" >        this.messageClass = 'alert alert-danger';</span>
-<span class="cstat-no" title="statement not covered" >        this.message = 'Error de estado: ' + err.status + ': ' + err.statusText + ',  ' + err.error;</span>
+        console.log(err);
+        this.messageClass = 'alert alert-danger';
+        this.message = 'Error de estado: ' + err.status + ': ' + err.statusText + ',  ' + err.error;
       },
     )
     return 'hola';
@@ -208,7 +220,7 @@ export class SignupComponent implements OnInit {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at Thu May 12 2022 13:26:04 GMT+0100 (hora de verano de Europa occidental)
+                at Tue Jun 21 2022 16:09:41 GMT+0100 (hora de verano de Europa occidental)
             </div>
         <script src="../../../prettify.js"></script>
         <script>
