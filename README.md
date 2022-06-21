@@ -2,6 +2,10 @@
 
 # Miembros del equipo
 
+* Yago Pérez Molanes (alu0101254678@ull.edu.es)
+* Andrea Calero Caro (alu0101202952@ull.edu.es)
+* Saúl Pérez García (alu0101129785@ull.edu.es)
+
 # Frontend
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.3.
