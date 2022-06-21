@@ -11,6 +11,23 @@ router.get('/', (req: Request, res: Response) => res.send('Hello world'));
 router.post('/signup', async (req: Request, res: Response) => {
   //console.log(req.body);
   const { name, email, password, type } = req.body;
+
+  if (email == '' && password == '') {
+    return res.status(401).send("Los campos de email o contraseña están vacíos");
+  }
+
+  if (email == '') {
+    return res.status(401).send("Debe proporcionar un email");
+  }
+
+  if (password == '') {
+    return res.status(401).send("Debe proporcionar una contraseña");
+  }
+
+  if (password.length < 4) {
+    return res.status(401).send("La contraseña debe tener un mínimo de 4 caracteres");
+  }
+
   const newUser = new User({ name, email, password, type }); 
   await newUser.save();
 

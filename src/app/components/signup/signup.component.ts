@@ -31,8 +31,12 @@ export class SignupComponent implements OnInit {
     this.Registro.signUp(this.user).subscribe(
       res => {
         console.log(res);
-        localStorage.setItem('token', res.token);
-        this.router.navigate(['/home/Catalogo']);
+        this.messageClass = 'alert alert-success';
+        this.message = 'Se ha registrado satisfactoriamente';
+        setTimeout(() => {
+          localStorage.setItem('token', res.token);
+          this.router.navigate(['/home/Catalogo']);
+        },2000);
       },
       err => {
         //console.log('error');

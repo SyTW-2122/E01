@@ -1,5 +1,5 @@
 import  mongoose, {ConnectOptions, connect}  from 'mongoose';
-/*
+
 async function startConnection() {
   await connect('mongodb://localhost/angular-auth', 
   { useNewUrlParser: true,
@@ -8,7 +8,7 @@ async function startConnection() {
   console.log('Conectado a la base de datos');
 }
 
-export default startConnection;*/
+export default startConnection;
 
 /*
 mongoose.connect('mongodb://localhost/angular-auth', {
@@ -20,7 +20,7 @@ mongoose.connect('mongodb://localhost/angular-auth', {
   console.log('Ha habido un problema con la conexion a la base de datos');
 });
 */
-
+/*
 import { MongoClient } from 'mongodb';
 
 // Connection URL
@@ -42,7 +42,7 @@ async function start() {
   return 'hecho';
 }
 
-export default start;
+export default start;*/
 
 /*start()
   .then(console.log)

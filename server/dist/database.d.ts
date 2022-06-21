@@ -1,4 +1,2 @@
-import { MongoClient } from 'mongodb';
-export declare const client: MongoClient;
-declare function start(): Promise<string>;
-export default start;
+declare function startConnection(): Promise<void>;
+export default startConnection;
