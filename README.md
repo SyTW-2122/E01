@@ -6,6 +6,27 @@
 * Andrea Calero Caro (alu0101202952@ull.edu.es)
 * Saúl Pérez García (alu0101129785@ull.edu.es)
 
+# Descripción del proyecto
+
+**Market Management**, es una aplicación web que tiene como propósito la gestión de productos de un supermercado. Se trata de un portal en el que los clientes del supermercado podrán visualizar los productos que se encuentran disponibles.
+
+Por lo tanto en la aplicación se distinguen dos roles diferenciados, que son el gestor y el cliente, por una parte el gestor es el que podrá editar el catálogo de productos, mientras que el cliente podrá visualizar estos productos y realizar una lista de la compra. 
+
+Permite entonces, integrar varias funciones en roles que realizan distintas tareas.
+
+# Ejecución de la aplicación
+
+Para ejecutar la aplicación siga los siguientes pasos:
+
+1.  Descargar el repositorio del proyecto.
+2.  Situarse en el directorio **E01**.
+3.  Situarse en el directorio **E01/server**.
+4.  Ejecutar el comando **_npm install_** & **_npm start_**.
+5.  (En otra terminal) Situarse en el directorio **E01**.
+6.  Ejecutar el comando **_npm install_** & **_npm start_**.
+
+Se asume que está instalado y en ejecución la base de datos de MongoDB.
+
 # Frontend
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.3.
